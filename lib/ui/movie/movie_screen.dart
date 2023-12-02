@@ -34,18 +34,29 @@ class _MovieListState extends State<MovieList> {
   Widget build(BuildContext context) {
     return Consumer<MovieChangeNotifier>(
       builder: (context, model, child) => Scaffold(
-        appBar: AppBar(title: Text('Watch'), actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.search,
+        appBar:
+        AppBar(
+            elevation: 0.0,
+            backgroundColor: Colors.white,
+            title: Text(
+              'Watch',
+              style: TextStyle(
+                color: Colors.black,
+              ),
             ),
-            onPressed: () {
-              Navigator.of(context).pushNamed(
-                MovieSearch.routeName,
-              );
-            },
-          )
-        ]),
+            actions: <Widget>[
+              IconButton(
+                color: Colors.black,
+                icon: Icon(
+                  Icons.search,
+                ),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(
+                    MovieSearch.routeName,
+                  );
+                },
+              )
+            ]),
         body: _buildList(),
       ),
     );
